@@ -23,10 +23,8 @@ static func configureObjectName() -> String {
     switch distribution {
     case 1...5:
         return "Grass (\(Int.random(in: 1...2)))"
-    case 6...7:
+    case 6...8:
         return "Cactus (\(Int.random(in: 1...3)))"
-    case 8:
-        return "Tree"
     case 9:
         return "Sign"
     case 10:
