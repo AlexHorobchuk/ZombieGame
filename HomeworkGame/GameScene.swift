@@ -16,48 +16,46 @@ class GameScene: SKScene {
     var playerDirectionRight = true
     var playerState = PlayerStatus.steady(direction: .right)
     var grounded = true
-    // controller
-    var virtualController: GCVirtualController?
-    var controllerXposition: Float = 0
-    var controllerYposition: Float = 0
+    var mapSize = 2 {
+        didSet {
+            let map = MapGenerator.generateMap(at: .init(x:(self.frame.width * CGFloat(mapSize)), y: 0), player: player, mapSize: self.frame.size, isFirstMap: false)
+            self.addChild(map)
+        }
+    }
     
     //nodes
     var cam = SKCameraNode()
     var player: SKSpriteNode!
-    var florNode: SKSpriteNode!
-    var bg: SKSpriteNode!
-    var sceneSize: CGFloat!
     
     override func didMove(to view: SKView) {
         self.anchorPoint = .init(x: 0, y: 0)
         self.camera = cam
-        sceneSize = self.frame.width * 30
-        self.addChild(Cloud.populateCloud(at: .init(x: 300, y: self.size.height - 200)))
-        setupMap()
         setupPlayer()
-        setupBG()
-        cloudGenerator()
+        generateZombie()
         connectController()
+        createMap()
         physicsWorld.contactDelegate = self
+        cam.position = .init(x: player.position.x, y: self.frame.height / CGFloat(2))
     }
     
-    func cloudGenerator() {
-        self.run(.repeatForever(.sequence([.run {
-            self.addChild(Cloud.populateCloud(at: .init(x: self.sceneSize + self.frame.width,
-                        y: CGFloat.random(in: (self.frame.maxY * 0.75)...self.frame.maxY))))
-        }, .wait(forDuration: TimeInterval(Int.random(in: 8...12)))])))
-    }
-    
-    func setupBG() {
-        let bgSize = self.size.width
-        let bgQuantity = Int((sceneSize / bgSize).rounded())
-        for i in 0...(bgQuantity + 2) {
-            bg = SKSpriteNode(texture: .init(imageNamed: "BG") , size: .init(width: bgSize, height: self.size.height))
-            bg.position = .init(x: (-self.frame.width / 2) + (bg.frame.width * CGFloat(i)) , y: self.frame.height / 2)
-            bg.zPosition = -3
-            self.addChild(bg)
+    func createMap() {
+        for i in 0...mapSize {
+            let firstMap = i > 0 ? false : true
+            let map = MapGenerator.generateMap(at: .init(x:(self.frame.width * CGFloat(i)), y: 0), player: player, mapSize: self.frame.size, isFirstMap: firstMap)
+            self.addChild(map)
         }
     }
+    
+    
+    func generateZombie() {
+        let range = {CGFloat.random(in: (self.player.position.x - 400...self.player.position.x + 400))}
+        let generateZombie = SKAction.run {
+            self.addChild(Zombie.populateZombie(at: .init(x: range(), y: self.frame.height * 2), player: self.player))
+        
+        }
+        self.run(.repeatForever(.sequence([generateZombie, .wait(forDuration: 5)])))
+    }
+
     
     func setupPlayer() {
         player = SKSpriteNode(texture: .init(imageNamed: "steady1"))
@@ -75,41 +73,10 @@ class GameScene: SKScene {
         
     }
     
-    func setupMap() {
-        var randomNumber = 1
-        let florNodeSize: CGFloat = 50
-        let nodeQuantity = Int((sceneSize / florNodeSize).rounded())
-        for i in 1...nodeQuantity {
-            
-            if i % 2 == 0 && i > 5 {
-                randomNumber = Int.random(in: 1...10)
-            }
-            
-            florNode = SKSpriteNode(texture: .init(imageNamed: "tile"),
-                                    size: .init(width: florNodeSize,
-                                                height: florNodeSize))
-            if i % 3 == 0  {
-                
-                florNode.addChild(BackgroundObject.populateObject(at: .init(x: florNode.position.x, y: (florNode.frame.height / 2))))
-            }
-            
-            florNode.position = .init(x: self.frame.width / 3 + (florNode.frame.width * CGFloat(i)), y: 40)
-            florNode.physicsBody = .init(rectangleOf: .init(width: florNodeSize, height: florNodeSize))
-            florNode.physicsBody?.isDynamic = false
-            florNode.physicsBody!.categoryBitMask = PhysicCategory.flor
-            florNode.physicsBody!.collisionBitMask = PhysicCategory.player
-            florNode.physicsBody!.contactTestBitMask = PhysicCategory.player
-            florNode.physicsBody!.affectedByGravity = false
-            florNode.zPosition = 0
-            self.addChild(florNode)
-            FlorModifire.shared.modify(florNode: florNode, randomInteger: randomNumber, NodeNumber: i)
-            
-            if i % 6 == 0 {
-                self.addChild(Cloud.populateCloud(at: .init(x: florNode.position.x, y: CGFloat.random(in: (self.frame.maxY * 0.75)...self.frame.maxY))))
-            }
-        }
-    }
-    
+    // controller set up
+    var virtualController: GCVirtualController?
+    var controllerXposition: Float = 0
+    var controllerYposition: Float = 0
     func connectController() {
         let controllerConfig = GCVirtualController.Configuration()
         controllerConfig.elements = [GCInputLeftThumbstick, GCInputButtonA]
@@ -120,13 +87,20 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        cam.position = .init(x: player.position.x, y: self.frame.height / CGFloat(2))
+        if playerState == PlayerStatus.jumping(direction: .left) {
+            mapSize += 1
+        }
+        if cam.position.x < player.position.x {
+            cam.position.x = player.position.x
+        }
         
         controllerXposition = (virtualController?.controller?.extendedGamepad?.leftThumbstick.xAxis.value)!
         controllerYposition = (virtualController?.controller?.extendedGamepad?.leftThumbstick.yAxis.value)!
         let playerYVelocity = (player.physicsBody?.velocity.dy)!
-        print(playerYVelocity)
+        
         movementPicker(grounded: grounded, direction: playerDirectionRight, playerState: playerState, controllerXAxis: controllerXposition, controllerYAxis: controllerYposition)
+        
+        
         let newPlayerStatus = statePicker(controllerXAxis: controllerXposition, ControllerYAxis: controllerYposition, playerVelocityY: playerYVelocity, directionRight: playerDirectionRight, grounded: grounded)
         if newPlayerStatus == playerState {
             return

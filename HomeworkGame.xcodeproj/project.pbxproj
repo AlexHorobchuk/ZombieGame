@@ -13,13 +13,14 @@
 		B03E9F342960B2B600D4EA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03E9F332960B2B600D4EA03 /* Assets.xcassets */; };
 		B06E60C7296424240083471C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06E60C5296424240083471C /* Assets.xcassets */; };
 		B06E60CE2964260D0083471C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06E60CC2964260D0083471C /* Assets.xcassets */; };
-		B06E60D229642B550083471C /* MagicParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = B06E60D129642B550083471C /* MagicParticle.sks */; };
 		B06E60FE296AB5430083471C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E60FD296AB5430083471C /* GameScene.swift */; };
+		B09D2CB429740EBA00226EBA /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB329740EBA00226EBA /* GameVC.swift */; };
+		B09D2CB629740EC100226EBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB529740EC100226EBA /* SceneDelegate.swift */; };
+		B09D2CB829749AB400226EBA /* MapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB729749AB400226EBA /* MapGenerator.swift */; };
+		B09D2CBA2974A8A100226EBA /* FlorTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB92974A8A100226EBA /* FlorTile.swift */; };
+		B09D2CBD297554B200226EBA /* Erasor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CBC297554B200226EBA /* Erasor.swift */; };
 		B0FEF718296BA6D6007E66C2 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF717296BA6D6007E66C2 /* Cloud.swift */; };
-		B0FEF71B296BAD29007E66C2 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF71A296BAD29007E66C2 /* GameVC.swift */; };
-		B0FEF71D296BAD51007E66C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF71C296BAD51007E66C2 /* SceneDelegate.swift */; };
 		B0FEF721296BBBC4007E66C2 /* BackgroundObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF720296BBBC4007E66C2 /* BackgroundObject.swift */; };
-		B0FEF725296BEBA7007E66C2 /* FlorNodeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF724296BEBA7007E66C2 /* FlorNodeModifier.swift */; };
 		B0FEF727296FE092007E66C2 /* MovementLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF726296FE092007E66C2 /* MovementLogic.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,13 +33,14 @@
 		B03E9F382960B2B600D4EA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06E60C5296424240083471C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06E60CC2964260D0083471C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B06E60D129642B550083471C /* MagicParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MagicParticle.sks; path = HomeworkGame/MagicParticle.sks; sourceTree = SOURCE_ROOT; };
 		B06E60FD296AB5430083471C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		B09D2CB329740EBA00226EBA /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		B09D2CB529740EC100226EBA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B09D2CB729749AB400226EBA /* MapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGenerator.swift; sourceTree = "<group>"; };
+		B09D2CB92974A8A100226EBA /* FlorTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlorTile.swift; sourceTree = "<group>"; };
+		B09D2CBC297554B200226EBA /* Erasor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Erasor.swift; sourceTree = "<group>"; };
 		B0FEF717296BA6D6007E66C2 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
-		B0FEF71A296BAD29007E66C2 /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameVC.swift; path = ../../../../.Trash/GameVC.swift; sourceTree = "<group>"; };
-		B0FEF71C296BAD51007E66C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../.Trash/SceneDelegate.swift; sourceTree = "<group>"; };
 		B0FEF720296BBBC4007E66C2 /* BackgroundObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundObject.swift; sourceTree = "<group>"; };
-		B0FEF724296BEBA7007E66C2 /* FlorNodeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlorNodeModifier.swift; sourceTree = "<group>"; };
 		B0FEF726296FE092007E66C2 /* MovementLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,15 +75,12 @@
 		B03E9F292960B2B400D4EA03 /* HomeworkGame */ = {
 			isa = PBXGroup;
 			children = (
-				B0FEF719296BA6FE007E66C2 /* Objects */,
-				B06E60CA296425D60083471C /* Particle */,
 				B03E9F2A2960B2B400D4EA03 /* AppDelegate.swift */,
-				B0FEF71C296BAD51007E66C2 /* SceneDelegate.swift */,
-				B0FEF71A296BAD29007E66C2 /* GameVC.swift */,
+				B09D2CB529740EC100226EBA /* SceneDelegate.swift */,
+				B09D2CB329740EBA00226EBA /* GameVC.swift */,
 				B06E60FD296AB5430083471C /* GameScene.swift */,
-				B0FEF726296FE092007E66C2 /* MovementLogic.swift */,
-				B02DF5402973741D002BFD9F /* CollisionDetection.swift */,
-				B0FEF724296BEBA7007E66C2 /* FlorNodeModifier.swift */,
+				B09D2CBB2975545A00226EBA /* Tools */,
+				B0FEF719296BA6FE007E66C2 /* Objects */,
 				B03E9F332960B2B600D4EA03 /* Assets.xcassets */,
 				B03E9F382960B2B600D4EA03 /* Info.plist */,
 			);
@@ -91,18 +90,30 @@
 		B06E60CA296425D60083471C /* Particle */ = {
 			isa = PBXGroup;
 			children = (
-				B06E60D129642B550083471C /* MagicParticle.sks */,
 				B06E60CC2964260D0083471C /* Assets.xcassets */,
 			);
 			path = Particle;
 			sourceTree = "<group>";
 		};
+		B09D2CBB2975545A00226EBA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B09D2CBC297554B200226EBA /* Erasor.swift */,
+				B0FEF726296FE092007E66C2 /* MovementLogic.swift */,
+				B09D2CB729749AB400226EBA /* MapGenerator.swift */,
+				B02DF5402973741D002BFD9F /* CollisionDetection.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		B0FEF719296BA6FE007E66C2 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				B09D2CB92974A8A100226EBA /* FlorTile.swift */,
 				B02DF5422973D4B6002BFD9F /* Zombie.swift */,
 				B0FEF717296BA6D6007E66C2 /* Cloud.swift */,
 				B0FEF720296BBBC4007E66C2 /* BackgroundObject.swift */,
+				B06E60CA296425D60083471C /* Particle */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -166,7 +177,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06E60C7296424240083471C /* Assets.xcassets in Resources */,
-				B06E60D229642B550083471C /* MagicParticle.sks in Resources */,
 				B03E9F342960B2B600D4EA03 /* Assets.xcassets in Resources */,
 				B06E60CE2964260D0083471C /* Assets.xcassets in Resources */,
 			);
@@ -180,14 +190,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FEF727296FE092007E66C2 /* MovementLogic.swift in Sources */,
+				B09D2CB829749AB400226EBA /* MapGenerator.swift in Sources */,
 				B02DF5412973741D002BFD9F /* CollisionDetection.swift in Sources */,
-				B0FEF725296BEBA7007E66C2 /* FlorNodeModifier.swift in Sources */,
-				B0FEF71D296BAD51007E66C2 /* SceneDelegate.swift in Sources */,
 				B0FEF718296BA6D6007E66C2 /* Cloud.swift in Sources */,
 				B02DF5432973D4B7002BFD9F /* Zombie.swift in Sources */,
+				B09D2CBA2974A8A100226EBA /* FlorTile.swift in Sources */,
+				B09D2CB629740EC100226EBA /* SceneDelegate.swift in Sources */,
+				B09D2CBD297554B200226EBA /* Erasor.swift in Sources */,
 				B03E9F2B2960B2B400D4EA03 /* AppDelegate.swift in Sources */,
 				B0FEF721296BBBC4007E66C2 /* BackgroundObject.swift in Sources */,
-				B0FEF71B296BAD29007E66C2 /* GameVC.swift in Sources */,
+				B09D2CB429740EBA00226EBA /* GameVC.swift in Sources */,
 				B06E60FE296AB5430083471C /* GameScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
