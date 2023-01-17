@@ -16,6 +16,7 @@ class FlorTile: SKSpriteNode {
         tile.physicsBody!.categoryBitMask = PhysicCategory.flor
         tile.physicsBody!.collisionBitMask = PhysicCategory.player
         tile.physicsBody!.contactTestBitMask = PhysicCategory.player
+        tile.physicsBody?.contactTestBitMask = PhysicCategory.erasor
         tile.physicsBody!.affectedByGravity = false
         tile.zPosition = 0
         return tile

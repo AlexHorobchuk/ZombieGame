@@ -18,7 +18,7 @@
 		B09D2CB629740EC100226EBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB529740EC100226EBA /* SceneDelegate.swift */; };
 		B09D2CB829749AB400226EBA /* MapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB729749AB400226EBA /* MapGenerator.swift */; };
 		B09D2CBA2974A8A100226EBA /* FlorTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB92974A8A100226EBA /* FlorTile.swift */; };
-		B09D2CBD297554B200226EBA /* Erasor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CBC297554B200226EBA /* Erasor.swift */; };
+		B0DDB53E2976A98E00C904E6 /* Erasor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDB53D2976A98E00C904E6 /* Erasor.swift */; };
 		B0FEF718296BA6D6007E66C2 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF717296BA6D6007E66C2 /* Cloud.swift */; };
 		B0FEF721296BBBC4007E66C2 /* BackgroundObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF720296BBBC4007E66C2 /* BackgroundObject.swift */; };
 		B0FEF727296FE092007E66C2 /* MovementLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FEF726296FE092007E66C2 /* MovementLogic.swift */; };
@@ -38,7 +38,7 @@
 		B09D2CB529740EC100226EBA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B09D2CB729749AB400226EBA /* MapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGenerator.swift; sourceTree = "<group>"; };
 		B09D2CB92974A8A100226EBA /* FlorTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlorTile.swift; sourceTree = "<group>"; };
-		B09D2CBC297554B200226EBA /* Erasor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Erasor.swift; sourceTree = "<group>"; };
+		B0DDB53D2976A98E00C904E6 /* Erasor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Erasor.swift; sourceTree = "<group>"; };
 		B0FEF717296BA6D6007E66C2 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		B0FEF720296BBBC4007E66C2 /* BackgroundObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundObject.swift; sourceTree = "<group>"; };
 		B0FEF726296FE092007E66C2 /* MovementLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementLogic.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		B09D2CBB2975545A00226EBA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				B09D2CBC297554B200226EBA /* Erasor.swift */,
+				B0DDB53D2976A98E00C904E6 /* Erasor.swift */,
 				B0FEF726296FE092007E66C2 /* MovementLogic.swift */,
 				B09D2CB729749AB400226EBA /* MapGenerator.swift */,
 				B02DF5402973741D002BFD9F /* CollisionDetection.swift */,
@@ -196,7 +196,7 @@
 				B02DF5432973D4B7002BFD9F /* Zombie.swift in Sources */,
 				B09D2CBA2974A8A100226EBA /* FlorTile.swift in Sources */,
 				B09D2CB629740EC100226EBA /* SceneDelegate.swift in Sources */,
-				B09D2CBD297554B200226EBA /* Erasor.swift in Sources */,
+				B0DDB53E2976A98E00C904E6 /* Erasor.swift in Sources */,
 				B03E9F2B2960B2B400D4EA03 /* AppDelegate.swift in Sources */,
 				B0FEF721296BBBC4007E66C2 /* BackgroundObject.swift in Sources */,
 				B09D2CB429740EBA00226EBA /* GameVC.swift in Sources */,

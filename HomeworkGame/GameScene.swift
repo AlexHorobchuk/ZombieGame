@@ -13,6 +13,7 @@ class GameScene: SKScene {
     
     
     //conditions
+    var erasorOn = true
     var playerDirectionRight = true
     var playerState = PlayerStatus.steady(direction: .right)
     var grounded = true
@@ -26,7 +27,7 @@ class GameScene: SKScene {
     //nodes
     var cam = SKCameraNode()
     var player: SKSpriteNode!
-    
+    var erasor = Erasor()
     override func didMove(to view: SKView) {
         self.anchorPoint = .init(x: 0, y: 0)
         self.camera = cam
@@ -36,6 +37,25 @@ class GameScene: SKScene {
         createMap()
         physicsWorld.contactDelegate = self
         cam.position = .init(x: player.position.x, y: self.frame.height / CGFloat(2))
+        setupErasor()
+    }
+    
+    func setupErasor() {
+        
+        let erasor = Erasor.generateErasor(at: .init(x: -(self.size.width * 2), y: self.frame.maxY), size: .init(width: 5, height: self.frame.height))
+        erasor.physicsBody?.isDynamic = true
+        self.erasor = erasor
+        self.addChild(erasor)
+    }
+    
+    func moveErasor() {
+        let action = SKAction.move(to: .init(x: self.cam.position.x - (self.frame.width * 2), y: 0), duration: 1)
+        if erasorOn {
+            self.erasor.run(.sequence([.run {self.erasorOn.toggle()},
+                                       .wait(forDuration: 5),
+                                       action,
+                                       .run {self.erasorOn.toggle()}]))
+        }
     }
     
     func createMap() {
@@ -46,16 +66,13 @@ class GameScene: SKScene {
         }
     }
     
-    
     func generateZombie() {
         let range = {CGFloat.random(in: (self.player.position.x - 400...self.player.position.x + 400))}
         let generateZombie = SKAction.run {
             self.addChild(Zombie.populateZombie(at: .init(x: range(), y: self.frame.height * 2), player: self.player))
-        
         }
         self.run(.repeatForever(.sequence([generateZombie, .wait(forDuration: 5)])))
     }
-
     
     func setupPlayer() {
         player = SKSpriteNode(texture: .init(imageNamed: "steady1"))
@@ -70,7 +87,6 @@ class GameScene: SKScene {
         player.physicsBody?.contactTestBitMask = PhysicCategory.flor
         player.physicsBody?.restitution = 0
         self.addChild(player)
-        
     }
     
     // controller set up
@@ -87,6 +103,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        moveErasor()
         if playerState == PlayerStatus.jumping(direction: .left) {
             mapSize += 1
         }

@@ -16,20 +16,18 @@ class MapGenerator: SKSpriteNode {
         bg.position = .init(x: map.frame.maxX, y: map.frame.maxY)
         bg.zPosition = -5
         map.addChild(bg)
+        
         map.anchorPoint = (.init(x: 0, y: 0))
         map.zPosition = -3
         map.position = point
+        
         let tileSize: CGSize = .init(width: 50, height: 50)
         let quantityOfTiles = Int(mapSize.width / tileSize.width)
         isFirstMap ? firstflorGenerator(size: mapSize, quantity: quantityOfTiles, tileSize: tileSize, parent: map) : randomFlorGenerator(size: mapSize, quantity: quantityOfTiles, tileSize: tileSize, parent: map)
         
-        map.physicsBody?.categoryBitMask = PhysicCategory.map
-        map.physicsBody?.isDynamic = false
-        map.physicsBody?.affectedByGravity = false
-        map.physicsBody?.allowsRotation = false
-        map.physicsBody?.contactTestBitMask = PhysicCategory.erasor
-        map.physicsBody = .init(rectangleOf: mapSize)
-        
+        let erasor = Erasor.generateErasor(at: .init(x: mapSize.width / 2, y: -100),
+                                           size: .init(width: mapSize.width, height: 5))
+        map.addChild(erasor)
         return map
     }
     

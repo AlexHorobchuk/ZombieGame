@@ -20,8 +20,8 @@ class Zombie: SKSpriteNode {
         zombie.physicsBody?.categoryBitMask = PhysicCategory.zombie
         zombie.physicsBody?.collisionBitMask = PhysicCategory.all
         zombie.physicsBody?.contactTestBitMask = PhysicCategory.player
+        zombie.physicsBody?.contactTestBitMask = PhysicCategory.erasor
         zombie.physicsBody?.restitution = 0
-        zombie.run(.repeatForever(startingAnimation()))
         zombie.run(.repeatForever(moveToPlayer(player: player, zombie: zombie)))
         return zombie
     }
@@ -41,11 +41,6 @@ class Zombie: SKSpriteNode {
                 }}
         
         return SKAction.animate(with: texture, timePerFrame: animationSpeed)
-    }
-    
-    static func startingAnimation() -> SKAction {
-        let randomBool = Bool.random()
-        return generateZombieAnimation(imagesCount: 15, imageNameRight: "Idle", imageNameLeft: "IdleLeft", direction: randomBool, animationSpeed: 0.2)
     }
     
     static func moveToPlayer(player: SKSpriteNode, zombie: Zombie) -> SKAction {
