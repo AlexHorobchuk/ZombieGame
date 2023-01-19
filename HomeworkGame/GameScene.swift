@@ -49,10 +49,10 @@ class GameScene: SKScene {
     }
     
     func moveErasor() {
-        let action = SKAction.move(to: .init(x: self.cam.position.x - (self.frame.width * 2), y: 0), duration: 1)
+        let action = SKAction.move(to: .init(x: self.cam.position.x - (self.frame.width * 1.5), y: 0), duration: 1)
         if erasorOn {
             self.erasor.run(.sequence([.run {self.erasorOn.toggle()},
-                                       .wait(forDuration: 5),
+                                       .wait(forDuration: 1),
                                        action,
                                        .run {self.erasorOn.toggle()}]))
         }
@@ -67,11 +67,11 @@ class GameScene: SKScene {
     }
     
     func generateZombie() {
-        let range = {CGFloat.random(in: (self.player.position.x - 400...self.player.position.x + 400))}
+        let range = {CGFloat.random(in: (self.player.position.x + 400...self.player.position.x + 1500))}
         let generateZombie = SKAction.run {
             self.addChild(Zombie.populateZombie(at: .init(x: range(), y: self.frame.height * 2), player: self.player))
         }
-        self.run(.repeatForever(.sequence([generateZombie, .wait(forDuration: 5)])))
+        self.run(.repeatForever(.sequence([generateZombie, .wait(forDuration: 6)])))
     }
     
     func setupPlayer() {
@@ -104,9 +104,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         moveErasor()
-        if playerState == PlayerStatus.jumping(direction: .left) {
-            mapSize += 1
-        }
+        
         if cam.position.x < player.position.x {
             cam.position.x = player.position.x
         }

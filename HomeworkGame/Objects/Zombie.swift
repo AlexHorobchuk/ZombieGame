@@ -47,10 +47,10 @@ class Zombie: SKSpriteNode {
         var moveRight: Bool {
             zombie.position.x < player.position.x ? true : false
             }
-        let speed = moveRight ? 5 : -5
+        let speed = moveRight ? 50 : -50
         let animation = generateZombieAnimation(imagesCount: 10, imageNameRight: "Walk", imageNameLeft: "WalkLeft", direction: moveRight, animationSpeed: 0.2)
-        let walk = SKAction.move(by: .init(dx: speed, dy: 0), duration: 0.3)
-        return SKAction.sequence([animation, walk])
+        let walk = SKAction.move(by: .init(dx: speed, dy: 0), duration: 2)
+        return SKAction.group([animation, walk])
         }
     
 

@@ -47,7 +47,7 @@ extension GameScene: SKPhysicsContactDelegate {
             self.grounded = true
         case .eraserMap:
             bodyA.physicsBody?.categoryBitMask == PhysicCategory.flor ? bodyA.parent?.removeFromParent() : bodyB.parent?.removeFromParent()
-            print("l")
+            mapSize += 1
         case .eraserZombie:
             bodyA.physicsBody?.categoryBitMask == PhysicCategory.zombie ? bodyA.removeFromParent() : bodyB.removeFromParent()
         case.playerEraser:
