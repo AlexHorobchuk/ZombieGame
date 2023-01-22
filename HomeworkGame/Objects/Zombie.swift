@@ -10,7 +10,7 @@ import SpriteKit
 
 class Zombie: SKSpriteNode {
     static func populateZombie(at point: CGPoint, player: SKSpriteNode) -> Zombie{
-        let zombie = Zombie(texture: .init(imageNamed: "Idle1"))
+        let zombie = Zombie(texture: .init(imageNamed: "WalkLeft1"))
         let aimWidth: CGFloat = 70
         let ratio = aimWidth / zombie.size.width
         zombie.position = point

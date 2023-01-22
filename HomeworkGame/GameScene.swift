@@ -17,7 +17,7 @@ class GameScene: SKScene {
     var playerDirectionRight = true
     var playerState = PlayerStatus.steady(direction: .right)
     var grounded = true
-    var mapSize = 2 {
+    var mapSize = 3 {
         didSet {
             let map = MapGenerator.generateMap(at: .init(x:(self.frame.width * CGFloat(mapSize)), y: 0), player: player, mapSize: self.frame.size, isFirstMap: false)
             self.addChild(map)
@@ -83,7 +83,7 @@ class GameScene: SKScene {
         player.physicsBody = .init(rectangleOf: .init(width: aimWidth / 2, height: player.size.height))
         player.physicsBody?.allowsRotation = false
         player.physicsBody?.categoryBitMask = PhysicCategory.player
-        player.physicsBody?.collisionBitMask = PhysicCategory.all
+        player.physicsBody?.collisionBitMask = PhysicCategory.flor
         player.physicsBody?.contactTestBitMask = PhysicCategory.flor
         player.physicsBody?.restitution = 0
         self.addChild(player)
