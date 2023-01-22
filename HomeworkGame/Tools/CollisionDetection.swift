@@ -14,7 +14,7 @@ struct PhysicCategory {
     static let flor  : UInt32 = 2
     static let player: UInt32 = 4
     static let zombie: UInt32 = 8
-    static let mapErasor: UInt32 = 16
+    static let bonus: UInt32 = 16
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -53,7 +53,7 @@ extension GameScene: SKPhysicsContactDelegate {
         case.playerEraser:
             bodyA.physicsBody?.categoryBitMask == PhysicCategory.player ? bodyA.removeFromParent() : bodyB.removeFromParent()
         case .unknow:
-            print("unknow collision")
+            return
         }
     }
     

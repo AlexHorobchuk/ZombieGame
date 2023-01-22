@@ -80,7 +80,7 @@ class GameScene: SKScene {
         let ratio = aimWidth / player.size.width
         player.setScale(ratio)
         player.position = .init(x: self.frame.width / 2, y: 100)
-        player.physicsBody = .init(texture: player.texture!, size: player.size)
+        player.physicsBody = .init(rectangleOf: .init(width: aimWidth / 2, height: player.size.height))
         player.physicsBody?.allowsRotation = false
         player.physicsBody?.categoryBitMask = PhysicCategory.player
         player.physicsBody?.collisionBitMask = PhysicCategory.all

@@ -13,6 +13,7 @@ class FlorTile: SKSpriteNode {
         let tile = FlorTile(texture: .init(imageNamed: "tile"), size: size)
         tile.physicsBody = .init(rectangleOf: size)
         tile.physicsBody!.isDynamic = false
+        tile.physicsBody?.mass = 1
         tile.physicsBody!.categoryBitMask = PhysicCategory.flor
         tile.physicsBody!.collisionBitMask = PhysicCategory.player
         tile.physicsBody!.contactTestBitMask = PhysicCategory.player
@@ -28,7 +29,7 @@ class FlorTile: SKSpriteNode {
         case 1:
             return
         case 2:
-            if nodeNumber % 4 != 0 && nodeNumber % 1 != 1 {
+            if nodeNumber % 5 == 0  {
                 florNode.removeFromParent()
             }
         case 3:
