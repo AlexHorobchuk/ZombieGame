@@ -11,6 +11,7 @@
 		B02DF5432973D4B7002BFD9F /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DF5422973D4B6002BFD9F /* Zombie.swift */; };
 		B03E9F2B2960B2B400D4EA03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E9F2A2960B2B400D4EA03 /* AppDelegate.swift */; };
 		B03E9F342960B2B600D4EA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03E9F332960B2B600D4EA03 /* Assets.xcassets */; };
+		B0482237297CD58B00D2D5EF /* MagicParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0482235297CD58B00D2D5EF /* MagicParticle.sks */; };
 		B06E60FE296AB5430083471C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E60FD296AB5430083471C /* GameScene.swift */; };
 		B09D2CB429740EBA00226EBA /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB329740EBA00226EBA /* GameVC.swift */; };
 		B09D2CB629740EC100226EBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB529740EC100226EBA /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 		B03E9F2A2960B2B400D4EA03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B03E9F332960B2B600D4EA03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B03E9F382960B2B600D4EA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0482235297CD58B00D2D5EF /* MagicParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MagicParticle.sks; sourceTree = "<group>"; };
 		B06E60FD296AB5430083471C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B09D2CB329740EBA00226EBA /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		B09D2CB529740EC100226EBA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		B09D2CBB2975545A00226EBA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B0482235297CD58B00D2D5EF /* MagicParticle.sks */,
 				B0DDB53D2976A98E00C904E6 /* Erasor.swift */,
 				B0FEF726296FE092007E66C2 /* MovementLogic.swift */,
 				B09D2CB729749AB400226EBA /* MapGenerator.swift */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03E9F342960B2B600D4EA03 /* Assets.xcassets in Resources */,
+				B0482237297CD58B00D2D5EF /* MagicParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

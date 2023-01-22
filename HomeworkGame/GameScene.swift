@@ -11,7 +11,13 @@ import GameController
 
 class GameScene: SKScene {
     
-    
+    //score
+    let scoreLabel = SKLabelNode()
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     //conditions
     var erasorOn = true
     var playerDirectionRight = true
@@ -38,6 +44,7 @@ class GameScene: SKScene {
         physicsWorld.contactDelegate = self
         cam.position = .init(x: player.position.x, y: self.frame.height / CGFloat(2))
         setupErasor()
+        setupScoreLabel()
     }
     
     func setupErasor() {
@@ -56,6 +63,15 @@ class GameScene: SKScene {
                                        action,
                                        .run {self.erasorOn.toggle()}]))
         }
+    }
+    
+    func setupScoreLabel() {
+        scoreLabel.text = "Score: 0"
+        scoreLabel.fontName = "bold"
+        scoreLabel.fontSize = 30
+        scoreLabel.fontColor = SKColor.black
+        cam.addChild(scoreLabel)
+        scoreLabel.position = .init(x: self.size.width * 0.8, y: self.size.height * 0.8)
     }
     
     func createMap() {
@@ -95,7 +111,7 @@ class GameScene: SKScene {
     var controllerYposition: Float = 0
     func connectController() {
         let controllerConfig = GCVirtualController.Configuration()
-        controllerConfig.elements = [GCInputLeftThumbstick, GCInputButtonA]
+        controllerConfig.elements = [GCInputLeftThumbstick]
         
         let controller = GCVirtualController(configuration: controllerConfig)
         controller.connect()

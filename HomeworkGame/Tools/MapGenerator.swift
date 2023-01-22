@@ -65,9 +65,9 @@ class MapGenerator: SKSpriteNode {
             tile.parent!.addChild(Cloud.populateCloud(at: .init(x: (tile.frame.width * CGFloat(i)), y: CGFloat.random(in: (tile.parent!.frame.maxY * 0.75)...tile.parent!.frame.maxY))))
         }
         
-        if i % 11 == 0 {
-            let random = Bool.random()
-            if random {
+        if i % 5 == 0 {
+            let random = Int.random(in: 1...3)
+            if random == 3 {
                 tile.addChild(Bonus.generateBonus(at: .init(x: tile.position.x, y: (tile.frame.height / 2))))
             }
         }

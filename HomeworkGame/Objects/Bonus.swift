@@ -19,7 +19,9 @@ class Bonus: SKSpriteNode {
         bonus.physicsBody?.categoryBitMask = PhysicCategory.bonus
         bonus.physicsBody?.collisionBitMask = PhysicCategory.flor
         bonus.physicsBody?.contactTestBitMask = PhysicCategory.player
-        bonus.zPosition = 1
+        bonus.zPosition = 2
+        let particle = SKEmitterNode(fileNamed: "MagicParticle")
+        bonus.addChild(particle!)
         return bonus
     }
 }
