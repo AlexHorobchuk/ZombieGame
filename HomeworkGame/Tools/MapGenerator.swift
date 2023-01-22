@@ -66,8 +66,8 @@ class MapGenerator: SKSpriteNode {
         }
         
         if i % 11 == 0 {
-            let random = Int.random(in: 1...3)
-            if random == 3 {
+            let random = Bool.random()
+            if random {
                 tile.addChild(Bonus.generateBonus(at: .init(x: tile.position.x, y: (tile.frame.height / 2))))
             }
         }

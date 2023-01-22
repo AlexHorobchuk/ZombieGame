@@ -18,9 +18,8 @@ class Zombie: SKSpriteNode {
         zombie.physicsBody = .init(texture: zombie.texture!, size: zombie.size)
         zombie.physicsBody?.allowsRotation = false
         zombie.physicsBody?.categoryBitMask = PhysicCategory.zombie
-        zombie.physicsBody?.collisionBitMask = PhysicCategory.all
-        zombie.physicsBody?.contactTestBitMask = PhysicCategory.player
-        zombie.physicsBody?.contactTestBitMask = PhysicCategory.erasor
+        zombie.physicsBody?.collisionBitMask = PhysicCategory.flor
+        zombie.physicsBody?.contactTestBitMask = PhysicCategory.player | PhysicCategory.erasor
         zombie.physicsBody?.restitution = 0
         zombie.run(.repeatForever(moveToPlayer(player: player, zombie: zombie)))
         return zombie
