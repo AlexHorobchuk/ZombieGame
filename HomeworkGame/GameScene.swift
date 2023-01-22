@@ -44,6 +44,7 @@ class GameScene: SKScene {
         physicsWorld.contactDelegate = self
         cam.position = .init(x: player.position.x, y: self.frame.height / CGFloat(2))
         setupErasor()
+        self.addChild(cam)
         setupScoreLabel()
     }
     
@@ -71,7 +72,7 @@ class GameScene: SKScene {
         scoreLabel.fontSize = 30
         scoreLabel.fontColor = SKColor.black
         cam.addChild(scoreLabel)
-        scoreLabel.position = .init(x: self.size.width * 0.8, y: self.size.height * 0.8)
+        scoreLabel.position = .init(x: cam.frame.width + self.frame.width * 0.3, y: cam.frame.height + self.frame.height * 0.3)
     }
     
     func createMap() {
