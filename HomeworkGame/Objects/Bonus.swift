@@ -10,7 +10,7 @@ import SpriteKit
 class Bonus: SKSpriteNode {
     static func generateBonus(at point: CGPoint) -> Bonus{
         let bonus = Bonus(texture: .init(imageNamed: "Skeleton"))
-        let aimWidth: CGFloat = 70
+        let aimWidth: CGFloat = 40
         let ratio = aimWidth / bonus.size.width
         bonus.position = point
         bonus.setScale(ratio)
@@ -19,6 +19,8 @@ class Bonus: SKSpriteNode {
         bonus.physicsBody?.categoryBitMask = PhysicCategory.bonus
         bonus.physicsBody?.collisionBitMask = PhysicCategory.flor
         bonus.physicsBody?.contactTestBitMask = PhysicCategory.player
+        bonus.zPosition = 1
+        bonus.anchorPoint = .init(x: 0.5, y: 0)
         return bonus
     }
 }
