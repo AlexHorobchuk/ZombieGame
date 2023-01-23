@@ -48,6 +48,12 @@ class GameScene: SKScene {
         setupScoreLabel()
     }
     
+    func gameOver() {
+        let gameOverScene = GameOverScene(size: self.size, score: score)
+        virtualController?.disconnect()
+        view?.presentScene(gameOverScene)
+    }
+    
     func setupErasor() {
         
         let erasor = Erasor.generateErasor(at: .init(x: -(self.size.width * 2), y: self.frame.maxY), size: .init(width: 5, height: self.frame.height))

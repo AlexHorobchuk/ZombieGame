@@ -15,7 +15,7 @@ class Zombie: SKSpriteNode {
         let ratio = aimWidth / zombie.size.width
         zombie.position = point
         zombie.setScale(ratio)
-        zombie.physicsBody = .init(texture: zombie.texture!, size: zombie.size)
+        zombie.physicsBody = .init(rectangleOf: .init(width: aimWidth * 0.4, height: zombie.size.height * 0.9))
         zombie.physicsBody?.allowsRotation = false
         zombie.physicsBody?.categoryBitMask = PhysicCategory.zombie
         zombie.physicsBody?.collisionBitMask = PhysicCategory.flor

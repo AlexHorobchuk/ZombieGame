@@ -12,6 +12,8 @@
 		B03E9F2B2960B2B400D4EA03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E9F2A2960B2B400D4EA03 /* AppDelegate.swift */; };
 		B03E9F342960B2B600D4EA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03E9F332960B2B600D4EA03 /* Assets.xcassets */; };
 		B0482237297CD58B00D2D5EF /* MagicParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0482235297CD58B00D2D5EF /* MagicParticle.sks */; };
+		B048223A297DD19E00D2D5EF /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0482239297DD19E00D2D5EF /* GameOverScene.swift */; };
+		B048223C297E0EF600D2D5EF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B048223B297E0EF600D2D5EF /* CustomButton.swift */; };
 		B06E60FE296AB5430083471C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E60FD296AB5430083471C /* GameScene.swift */; };
 		B09D2CB429740EBA00226EBA /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB329740EBA00226EBA /* GameVC.swift */; };
 		B09D2CB629740EC100226EBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D2CB529740EC100226EBA /* SceneDelegate.swift */; };
@@ -32,6 +34,8 @@
 		B03E9F332960B2B600D4EA03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B03E9F382960B2B600D4EA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0482235297CD58B00D2D5EF /* MagicParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MagicParticle.sks; sourceTree = "<group>"; };
+		B0482239297DD19E00D2D5EF /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		B048223B297E0EF600D2D5EF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B06E60FD296AB5430083471C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B09D2CB329740EBA00226EBA /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		B09D2CB529740EC100226EBA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,12 +82,22 @@
 				B09D2CB529740EC100226EBA /* SceneDelegate.swift */,
 				B09D2CB329740EBA00226EBA /* GameVC.swift */,
 				B06E60FD296AB5430083471C /* GameScene.swift */,
-				B09D2CBB2975545A00226EBA /* Tools */,
+				B0482239297DD19E00D2D5EF /* GameOverScene.swift */,
 				B0FEF719296BA6FE007E66C2 /* Objects */,
+				B09D2CBB2975545A00226EBA /* Tools */,
+				B048223E297E0F0F00D2D5EF /* CustomViews */,
 				B03E9F332960B2B600D4EA03 /* Assets.xcassets */,
 				B03E9F382960B2B600D4EA03 /* Info.plist */,
 			);
 			path = HomeworkGame;
+			sourceTree = "<group>";
+		};
+		B048223E297E0F0F00D2D5EF /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				B048223B297E0EF600D2D5EF /* CustomButton.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		B09D2CBB2975545A00226EBA /* Tools */ = {
@@ -182,6 +196,7 @@
 			files = (
 				B0FEF727296FE092007E66C2 /* MovementLogic.swift in Sources */,
 				B09D2CB829749AB400226EBA /* MapGenerator.swift in Sources */,
+				B048223A297DD19E00D2D5EF /* GameOverScene.swift in Sources */,
 				B02DF5412973741D002BFD9F /* CollisionDetection.swift in Sources */,
 				B0FEF718296BA6D6007E66C2 /* Cloud.swift in Sources */,
 				B02DF5432973D4B7002BFD9F /* Zombie.swift in Sources */,
@@ -193,6 +208,7 @@
 				B0FEF721296BBBC4007E66C2 /* BackgroundObject.swift in Sources */,
 				B09D2CB429740EBA00226EBA /* GameVC.swift in Sources */,
 				B06E60FE296AB5430083471C /* GameScene.swift in Sources */,
+				B048223C297E0EF600D2D5EF /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

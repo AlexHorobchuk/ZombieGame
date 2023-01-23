@@ -53,7 +53,7 @@ extension GameScene: SKPhysicsContactDelegate {
         case .eraserZombie:
             bodyA.physicsBody?.categoryBitMask == PhysicCategory.zombie ? bodyA.removeFromParent() : bodyB.removeFromParent()
         case.playerEraser:
-            bodyA.physicsBody?.categoryBitMask == PhysicCategory.player ? bodyA.removeFromParent() : bodyB.removeFromParent()
+            gameOver()
         case .unknow:
             return
         case .playerBonus:
