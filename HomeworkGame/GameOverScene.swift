@@ -19,10 +19,10 @@ class GameOverScene: SKScene {
     }
     
     var score: Int
-    let gameOverLabel = SKLabelNode(fontNamed: "bold")
-    let scoreLabel = SKLabelNode(fontNamed: "bold")
-    let menuLabel = SKLabelNode(fontNamed: "bold")
-    let restartLabel = SKLabelNode(fontNamed: "bold")
+    let gameOverLabel = SKLabelNode(fontNamed: "AvenirNext-Bold")
+    let scoreLabel = SKLabelNode(fontNamed: "AvenirNext-Bold")
+    let menuLabel = SKLabelNode(fontNamed: "AvenirNext-Bold")
+    let restartLabel = SKLabelNode(fontNamed: "AvenirNext-Bold")
     
     override func didMove(to view: SKView) {
         self.anchorPoint = .init(x: 0.5, y: 0.5)
@@ -47,7 +47,13 @@ class GameOverScene: SKScene {
     }
     
     func setupLabel() {
-        scoreLabel.text = "Your Score: \(score)"
+        let oldRecord = UserDefaultsManager.shared.getUserDefaultScore()
+        if oldRecord < score {
+            UserDefaultsManager.shared.setUserDefaultScore(value: score)
+            scoreLabel.text = "You set a new record! Score: \(score)"
+        } else {
+            scoreLabel.text = "Your Score: \(score)"
+        }
         scoreLabel.fontSize = 32
         scoreLabel.fontColor = SKColor.black
         scoreLabel.position.y = self.frame.maxY * 0.3
@@ -83,6 +89,10 @@ class GameOverScene: SKScene {
             let gameScene = GameScene(size: (view?.bounds.size)!)
             view?.presentScene(gameScene)
         }
+        if CGRectContainsPoint(menuLabel.frame, location) {
+            self.parent?.removeFromParent()
+        }
+        
     }
     
 }

@@ -74,7 +74,7 @@ class GameScene: SKScene {
     
     func setupScoreLabel() {
         scoreLabel.text = "Score: 0"
-        scoreLabel.fontName = "bold"
+        scoreLabel.fontName = "AvenirNext-Bold"
         scoreLabel.fontSize = 30
         scoreLabel.fontColor = SKColor.black
         cam.addChild(scoreLabel)

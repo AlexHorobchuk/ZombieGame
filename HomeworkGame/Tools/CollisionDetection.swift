@@ -38,6 +38,8 @@ extension GameScene: SKPhysicsContactDelegate {
             return .playerEraser
         case(PhysicCategory.player, PhysicCategory.bonus), ( PhysicCategory.bonus, PhysicCategory.player):
             return .playerBonus
+        case(PhysicCategory.player, PhysicCategory.zombie), (PhysicCategory.zombie, PhysicCategory.player):
+            return .playerZombie
         case (_, _):
             return .unknow
         }
@@ -59,6 +61,8 @@ extension GameScene: SKPhysicsContactDelegate {
         case .playerBonus:
             score += 1
             bodyA.physicsBody?.categoryBitMask == PhysicCategory.bonus ? bodyA.removeFromParent() : bodyB.removeFromParent()
+        case .playerZombie:
+            self.run(.sequence([.wait(forDuration: 0.05), .run {self.gameOver()}]))
         }
     }
     
@@ -69,6 +73,7 @@ extension GameScene: SKPhysicsContactDelegate {
         case unknow
         case eraserZombie
         case playerBonus
+        case playerZombie
         
     }
 }
