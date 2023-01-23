@@ -90,7 +90,8 @@ class GameOverScene: SKScene {
             view?.presentScene(gameScene)
         }
         if CGRectContainsPoint(menuLabel.frame, location) {
-            self.parent?.removeFromParent()
+            let menuScene = MenuScene(size: (view?.bounds.size)!)
+            view?.presentScene(menuScene)
         }
         
     }
